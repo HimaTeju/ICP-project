@@ -1,17 +1,272 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width" />
-  <title>IC Hello Starter</title>
-  <base href="/" />
-  <link rel="icon" href="/favicon.ico" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Periodic Table</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 32px;
+        }
+        p {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 18px;
+            color: #555;
+        }
+        .legend {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+        .legend div {
+            margin: 0 15px;
+            padding: 10px;
+            font-size: 14px;
+            border-radius: 5px;
+            color: white;
+        }
+        .metal { background-color: #FFB74D; }
+        .non-metal { background-color: #4FC3F7; }
+        .noble-gas { background-color: #81C784; }
+        .metalloid { background-color: #FFF176; }
+        .transition-metal { background-color: #7986CB; }
+
+        .periodic-table {
+            display: grid;
+            grid-template-columns: repeat(10, 100px);
+            grid-gap: 10px;
+            justify-content: center;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        .element {
+            text-align: center;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .element:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        .element a {
+            text-decoration: none;
+            color: inherit;
+        }
+        .element .number {
+            font-size: 14px;
+            color: #555;
+        }
+        .element .symbol {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 5px 0;
+        }
+        .element .name {
+            font-size: 14px;
+            color: #888;
+        }
+    </style>
 </head>
-
 <body>
-  <div id="root"></div>
-  <script type="module" src="/src/main.jsx"></script>
-</body>
 
+<div class="container">
+    <h1>Mini Periodic Table</h1>
+    <p>This is a mini periodic table featuring the first 20 elements. The elements are color-coded according to their categories. Click on any element to learn more about it on Wikipedia!</p>
+
+    <!-- Legend to explain color coding -->
+    <div class="legend">
+        <div class="metal">Metal</div>
+        <div class="non-metal">Non-Metal</div>
+        <div class="noble-gas">Noble Gas</div>
+        <div class="metalloid">Metalloid</div>
+    </div>
+
+    <!-- Periodic Table -->
+    <div class="periodic-table">
+        <!-- Hydrogen -->
+        <div class="element non-metal">
+            <a href="https://en.wikipedia.org/wiki/Hydrogen" target="_blank">
+                <div class="number">1</div>
+                <div class="symbol">H</div>
+                <div class="name">Hydrogen</div>
+            </a>
+        </div>
+        <!-- Helium -->
+        <div class="element noble-gas">
+            <a href="https://en.wikipedia.org/wiki/Helium" target="_blank">
+                <div class="number">2</div>
+                <div class="symbol">He</div>
+                <div class="name">Helium</div>
+            </a>
+        </div>
+        <!-- Lithium -->
+        <div class="element metal">
+            <a href="https://en.wikipedia.org/wiki/Lithium" target="_blank">
+                <div class="number">3</div>
+                <div class="symbol">Li</div>
+                <div class="name">Lithium</div>
+            </a>
+        </div>
+        <!-- Beryllium -->
+        <div class="element metal">
+            <a href="https://en.wikipedia.org/wiki/Beryllium" target="_blank">
+                <div class="number">4</div>
+                <div class="symbol">Be</div>
+                <div class="name">Beryllium</div>
+            </a>
+        </div>
+        <!-- Boron -->
+        <div class="element metalloid">
+            <a href="https://en.wikipedia.org/wiki/Boron" target="_blank">
+                <div class="number">5</div>
+                <div class="symbol">B</div>
+                <div class="name">Boron</div>
+            </a>
+        </div>
+        <!-- Carbon -->
+        <div class="element non-metal">
+            <a href="https://en.wikipedia.org/wiki/Carbon" target="_blank">
+                <div class="number">6</div>
+                <div class="symbol">C</div>
+                <div class="name">Carbon</div>
+            </a>
+        </div>
+        <!-- Nitrogen -->
+        <div class="element non-metal">
+            <a href="https://en.wikipedia.org/wiki/Nitrogen" target="_blank">
+                <div class="number">7</div>
+                <div class="symbol">N</div>
+                <div class="name">Nitrogen</div>
+            </a>
+        </div>
+        <!-- Oxygen -->
+        <div class="element non-metal">
+            <a href="https://en.wikipedia.org/wiki/Oxygen" target="_blank">
+                <div class="number">8</div>
+                <div class="symbol">O</div>
+                <div class="name">Oxygen</div>
+            </a>
+        </div>
+        <!-- Fluorine -->
+        <div class="element non-metal">
+            <a href="https://en.wikipedia.org/wiki/Fluorine" target="_blank">
+                <div class="number">9</div>
+                <div class="symbol">F</div>
+                <div class="name">Fluorine</div>
+            </a>
+        </div>
+        <!-- Neon -->
+        <div class="element noble-gas">
+            <a href="https://en.wikipedia.org/wiki/Neon" target="_blank">
+                <div class="number">10</div>
+                <div class="symbol">Ne</div>
+                <div class="name">Neon</div>
+            </a>
+        </div>
+        <!-- Sodium -->
+        <div class="element metal">
+            <a href="https://en.wikipedia.org/wiki/Sodium" target="_blank">
+                <div class="number">11</div>
+                <div class="symbol">Na</div>
+                <div class="name">Sodium</div>
+            </a>
+        </div>
+        <!-- Magnesium -->
+        <div class="element metal">
+            <a href="https://en.wikipedia.org/wiki/Magnesium" target="_blank">
+                <div class="number">12</div>
+                <div class="symbol">Mg</div>
+                <div class="name">Magnesium</div>
+            </a>
+        </div>
+        <!-- Aluminium -->
+        <div class="element metal">
+            <a href="https://en.wikipedia.org/wiki/Aluminium" target="_blank">
+                <div class="number">13</div>
+                <div class="symbol">Al</div>
+                <div class="name">Aluminium</div>
+            </a>
+        </div>
+        <!-- Silicon -->
+        <div class="element metalloid">
+            <a href="https://en.wikipedia.org/wiki/Silicon" target="_blank">
+                <div class="number">14</div>
+                <div class="symbol">Si</div>
+                <div class="name">Silicon</div>
+            </a>
+        </div>
+        <!-- Phosphorus -->
+        <div class="element non-metal">
+            <a href="https://en.wikipedia.org/wiki/Phosphorus" target="_blank">
+                <div class="number">15</div>
+                <div class="symbol">P</div>
+                <div class="name">Phosphorus</div>
+            </a>
+        </div>
+        <!-- Sulfur -->
+        <div class="element non-metal">
+            <a href="https://en.wikipedia.org/wiki/Sulfur" target="_blank">
+                <div class="number">16</div>
+                <div class="symbol">S</div>
+                <div class="name">Sulfur</div>
+            </a>
+        </div>
+        <!-- Chlorine -->
+        <div class="element non-metal">
+            <a href="https://en.wikipedia.org/wiki/Chlorine" target="_blank">
+                <div class="number">17</div>
+                <div class="symbol">Cl</div>
+                <div class="name">Chlorine</div>
+            </a>
+        </div>
+        <!-- Argon -->
+        <div class="element noble-gas">
+            <a href="https://en.wikipedia.org/wiki/Argon" target="_blank">
+                <div class="number">18</div>
+                <div class="symbol">Ar</div>
+                <div class="name">Argon</div>
+            </a>
+        </div>
+        <!-- Potassium -->
+        <div class="element metal">
+            <a href="https://en.wikipedia.org/wiki/Potassium" target="_blank">
+                <div class="number">19</div>
+                <div class="symbol">K</div>
+                <div class="name">Potassium</div>
+            </a>
+        </div>
+        <!-- Calcium -->
+        <div class="element metal">
+            <a href="https://en.wikipedia.org/wiki/Calcium" target="_blank">
+                <div class="number">20</div>
+                <div class="symbol">Ca</div>
+                <div class="name">Calcium</div>
+            </a>
+        </div>
+    </div>
+</div>
+
+</body>
 </html>
